@@ -1,8 +1,8 @@
 @Entry
 @Component
-struct Index {
+struct MainPage {
   @State message: string = 'Hello World';
-
+  //第一次上传
   build() {
     RelativeContainer() {
       Text(this.message)
