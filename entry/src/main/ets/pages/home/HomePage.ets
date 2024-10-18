@@ -22,14 +22,26 @@ export struct HomePage {
 
   loadNet(){
     //网络请求
-    axios<string, AxiosResponse<string>, null>({
+    /*axios<string, AxiosResponse<string>, null>({
       method: "get",
       url: 'http://10.161.9.80:7012/goods/info?category_id=0&currentPage=1&pageSize=10'
     }).then((res: AxiosResponse) => {
       console.info('result:' + JSON.stringify(res.data));
     }).catch((error: AxiosError) => {
       console.error(error.message);
+    })*/
+
+    let instance = axios.create({
+      baseURL: 'http://10.161.9.80:7012',
+      timeout: 1000,
     })
+    instance.get("/goods/info?category_id=0&currentPage=1&pageSize=10")
+      .then((response:AxiosResponse)=>{
+        console.log("tatata",JSON.stringify(response.data))
+      }).catch((response:AxiosError)=>{
+      console.log("tatata",response.message+"")
+    })
+
   }
 
   build() {
