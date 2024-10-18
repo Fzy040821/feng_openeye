@@ -10,20 +10,9 @@ const commonHeader: AxiosHeaders = new AxiosHeaders()
  * @param date
  * @returns
  */
-export function getHomeListAxios(date: string = "") {
+export function getHomeListAxios() {
   return axiosClient.get<HomeModel>({
     url: baseUrl + "api/v2/feed",
-    params: { "date": date },
-    showLoading: true,
-    headers: commonHeader
-  })
-}
-
-export function getHomeListAxios1(date: string = "") {
-  return axiosClient.get<HomeModel>({
-    url: baseUrl + "api/v2/feed",
-    params: { "date": date },
-    showLoading: true,
     headers: commonHeader
   })
 }

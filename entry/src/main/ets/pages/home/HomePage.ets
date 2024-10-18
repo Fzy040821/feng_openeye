@@ -20,22 +20,10 @@ export struct HomePage {
   @State showLoading: boolean = false
 
   aboutToAppear(): void {
-    HomeViewModel.observeState(state=>{
-      this.viewState = state
+
+    HomeViewModel.getHomeList((result) => {
+      this.dataList = result
     })
-   this.load()
-  }
-  load(){
-    HomeViewModel.getHomeList(
-      (result) => {
-        this.isRefreshing = false
-        if (HomeViewModel.getDate() == "") {
-          this.dataList = result
-          console.log('12')
-        } else {
-          this.dataList = [...this.dataList, ...result]
-        }
-      })
   }
 
   test(){
@@ -90,13 +78,13 @@ export struct HomePage {
      CommonTopBar({title:'首页' , backButton:false , alpha:1}).align(Alignment.TopStart).height(80)
 
      Stack(){
-      StateComponent({
+      /*StateComponent({
         viewState:this.viewState,
         showSkeleton:true,
         retryCallback:()=>{
           //this.loadNet()
         }
-      }){
+      }){*/
         Refresh({refreshing: this.isRefreshing , offset:100 , friction:100}){
           List(){
             ForEach(this.dataList , (item: HomeModelIssueListItemList , index: number)=>{
@@ -114,7 +102,7 @@ export struct HomePage {
         }
       }
      }.layoutWeight(1)
-   }
+   //}
 
   }
 }

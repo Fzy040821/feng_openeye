@@ -12,11 +12,11 @@ export struct StateComponent{
 
   build() {
     Stack(){
-      if(this.viewState != ViewStateConstant.VIEW_STATE_SUCCESS){
-        this.holderContent()
-      }else {
+      // if(this.viewState != ViewStateConstant.VIEW_STATE_SUCCESS){
+      //   this.holderContent()
+      // }else {
         this.viewContent()
-      }
+      // }
     }
   }
 /**
