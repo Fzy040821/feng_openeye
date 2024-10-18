@@ -1,6 +1,5 @@
 import { getHomeListAxios } from '../http/ApiService';
-import axiosClient from '../http/AxiosRequest';
-import { HomeModel, HomeModelIssueListItemList } from '../model/HomeModel';
+import { HomeModelIssueListItemList } from '../model/HomeModel';
 import { BaseViewModel, ResultCallback } from './BaseViewModel';
 
 export class HomeViewModel extends BaseViewModel{

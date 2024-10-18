@@ -78,13 +78,6 @@ export struct HomePage {
      CommonTopBar({title:'首页' , backButton:false , alpha:1}).align(Alignment.TopStart).height(80)
 
      Stack(){
-      /*StateComponent({
-        viewState:this.viewState,
-        showSkeleton:true,
-        retryCallback:()=>{
-          //this.loadNet()
-        }
-      }){*/
         Refresh({refreshing: this.isRefreshing , offset:100 , friction:100}){
           List(){
             ForEach(this.dataList , (item: HomeModelIssueListItemList , index: number)=>{
@@ -102,7 +95,5 @@ export struct HomePage {
         }
       }
      }.layoutWeight(1)
-   //}
-
   }
 }
