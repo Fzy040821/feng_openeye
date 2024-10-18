@@ -40,24 +40,7 @@ export class HomeViewModel extends BaseViewModel{
   }
 
   async getHomeList1(resultCallback?: ResultCallback<HomeModelIssueListItemList[]>) {
-    await this.httpRequest()
-      .promise(getHomeListAxios1(this.date), this.date == "" ?true : false)
-      .then(result => {
-        let items = result.issueList[0].itemList
-        let list = items.filter((item) => item.type == "video")
-        if (this.date == "") {
-          let bannerList: HomeModelIssueListItemList[]
-          let bannerBean: HomeModelIssueListItemList = {}
-          bannerList = items.filter((item) => item.type == "banner2")
-          if (bannerList.length > 0) {
-            bannerBean = { bannerList: bannerList, type: "banner" }
-            list.unshift(bannerBean)
-          }
-        }
-        resultCallback?.(list)
-        //分页
-        //this.spliteDate(result.nextPageUrl)
-      })
+
   }
 }
 let homeViewModel = new HomeViewModel()
