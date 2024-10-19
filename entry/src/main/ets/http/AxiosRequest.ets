@@ -36,11 +36,6 @@ const axiosClient = new AxiosHttpRequest({
       }
     },
     responseInterceptorCatch: (error) => {
-      /*if (axiosClient.config.showLoading) {
-        hideLoadingDialog()
-      }
-      LogUtils.error("网络请求响应异常", error.toString())
-      errorHandler(error);*/
       return Promise.reject(error);
     },
   }

@@ -11,7 +11,6 @@ import { CommonType } from '../model/typeAlias/TypeAlias';
 
 /**
  * 定义接口响应包装类
- */
 export interface BaseResponse {
   //wanAndroid-API响应体
   errorCode: number
@@ -19,14 +18,14 @@ export interface BaseResponse {
   //拓展xxx-API响应体
 }
 
-/**
+*//**
  * 接口实现类包装，例如有其他业务可以再次继承实现xxxResponse
- */
+ *//*
 export interface ApiResponse<T = CommonType> extends BaseResponse {
   //wanAndroid-API响应体
   data: T;
   //拓展xxx-API响应体
-}
+}*/
 
 class AxiosHttpRequest{
   config:HttpRequestConfig;
