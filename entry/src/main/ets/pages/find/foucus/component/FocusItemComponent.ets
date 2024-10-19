@@ -61,10 +61,10 @@ export struct FocusItemComponent {
             .height($r('app.float.size_130'))
             .width($r('app.float.size_220'))
           }.onClick(() => {
-            /*Router.push(RoutePath.DetailPage, {
+            Router.push(RoutePath.DetailPage, {
               "id": innerItem.data.id,
               "playUrl": innerItem.data.playUrl
-            } as CategoryRouteParams)*/
+            } as CategoryRouteParams)
           })
         })
       }

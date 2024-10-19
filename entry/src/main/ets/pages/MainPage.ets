@@ -10,8 +10,6 @@ import { MinePage } from './mine/MinePage';
 struct MainPage {
   @State currentIndex: number = 0
   @Provide homeTabSelIndex: number = 0
-  @State loadingTips: string = "加载中..."
-  @State loadingShow: boolean = false
   build() {
    Column(){
      Tabs({barPosition: BarPosition.End , index: this.currentIndex}){

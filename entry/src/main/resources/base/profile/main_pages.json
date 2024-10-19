@@ -8,6 +8,7 @@
     "pages/mine/MinePage",
     "pages/find/foucus/FocusPage",
     "pages/find/categrory/CategoryPage",
-    "pages/find/topic/TopicPage"
+    "pages/find/topic/TopicPage",
+    "pages/commonDetail/DetailPage"
   ]
 }

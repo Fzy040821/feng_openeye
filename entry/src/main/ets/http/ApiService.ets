@@ -29,3 +29,17 @@ export function getFocusDatA() {
     }
   )
 }
+
+/**
+ * 获取视频详情接口
+ * @param id
+ */
+export function getRelationList(id: number) {
+  return axiosClient.get<HomeModel>(
+    {
+      url: baseUrl + "api/v4/video/related",
+      params: { "id": id },
+      headers: commonHeader
+    }
+  )
+}
